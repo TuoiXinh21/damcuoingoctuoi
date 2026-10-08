@@ -2205,14 +2205,14 @@ body::before {
 
 
 /* =========================================================
-   =========================================================
+   RESPONSIVE - ĐÃ ĐỒNG BỘ LẠI
+   Không để các breakpoint ghi đè vị trí ảnh lẫn nhau
+   ========================================================= */
+
+
+/* =========================================================
    TABLET
    601px - 900px
-   =========================================================
-   ========================================================= */
-/* =========================================================
-   RESPONSIVE MỚI - GỌN VÀ KHÔNG GHI ĐÈ LẪN NHAU
-   900px / 600px / 480px / 425px / 375px / 340px / 320px
    ========================================================= */
 
 @media screen and (max-width: 900px) {
@@ -2252,10 +2252,11 @@ body::before {
 
 
 /* =========================================================
-   MOBILE 601px - 900px
+   MOBILE
+   481px - 600px
    ========================================================= */
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 481px) and (max-width: 600px) {
 
     .trang-wedding {
         padding: 40px 10px 70px !important;
@@ -2274,166 +2275,77 @@ body::before {
 
     .wedding-names {
         margin-bottom: 42px;
-        font-size: clamp(24px, 8vw, 30px);
+        font-size: 30px;
         line-height: 1.25;
     }
 
     .wedding-names span {
         margin: 0 3px;
-        font-size: clamp(21px, 7vw, 25px);
-    }
-
-    /* ẢNH CƯỚI */
-    .wedding-photo {
-        width: 100%;
-        max-width: 430px;
-        height: 530px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .wedding-photo .anh-cuoi {
-        top: 31px;
-        left: 55%;
-        width: 56%;
-        height: auto;
-        aspect-ratio: 378 / 557;
-        object-fit: cover;
-        transform: translateX(-54%) rotate(-3deg);
-    }
-
-    .wedding-photo .khung-anh {
-        top: 0;
-        left: 55%;
-        width: 76%;
-        height: auto;
-        transform: translateX(-50%) rotate(1deg);
-    }
-
-    /* THÔNG TIN */
-    .wedding-info {
-        width: 92%;
-        min-height: 680px;
-        margin: 60px auto 80px;
-        padding: 30px 20px 35px;
-        border-radius: 10px;
-    }
-
-    .info-title {
-        margin-bottom: 22px;
-        font-size: 18px;
-    }
-
-    .family-info {
-        margin-bottom: 24px;
-    }
-
-    .family-side {
-        width: 46%;
-        font-size: 10px;
-    }
-
-    .family-side .small-text {
-        font-size: 9px;
-    }
-
-    .family-side strong {
-        font-size: 11px;
-    }
-
-    .family-side .address {
-        font-size: 7px;
-    }
-
-    .family-line {
-        height: 60px;
-    }
-
-    .invitation-text {
-        margin-bottom: 25px;
-        font-size: 10px;
-        line-height: 1.7;
-    }
-
-    .bride-name,
-    .groom-name {
-        font-size: 30px;
-        line-height: 1.2;
-    }
-
-    .gender {
-        font-size: 7px;
-        letter-spacing: 2px;
-    }
-
-    .and-symbol {
         font-size: 25px;
     }
 
-    .ceremony-text {
-        font-size: 10px;
-        line-height: 1.8;
-    }
 
-    .ceremony-time {
-        margin-bottom: 25px;
-        font-size: 22px;
-    }
+    /* =========================
+       KHUNG ẢNH CƯỚI
+       ========================= */
 
-    .date-row {
-        gap: 12px;
-        font-size: 10px;
-    }
-
-    .date-row strong {
-        font-size: 28px;
-    }
-
-    .date-row i {
-        height: 18px;
-    }
-
-    .year {
-        font-size: 17px;
-    }
-
-    .lunar-date {
-        font-size: 8px;
-        letter-spacing: 1.4px;
-    }
-
-    .info-flower-left {
-        left: -48px;
-        bottom: 95px;
-        width: 115px;
-    }
-
-    .info-flower-right {
-        right: -48px;
-        bottom: -5px;
-        width: 125px;
-    }
-
-    /* ALBUM */
-    .wedding-album {
+    .wedding-photo {
+        position: relative;
         width: 100%;
-        margin: 55px auto 80px;
+        max-width: 430px;
+        height: 530px;
+        margin: 0 auto;
+        overflow: visible !important;
     }
 
-    .album-title {
-        margin-bottom: 28px;
-        font-size: 17px;
+    .wedding-photo .anh-cuoi {
+        position: absolute;
+
+        top: 38px;
+        left: 50%;
+
+        width: 61%;
+        height: auto;
+
+        aspect-ratio: 325 / 490;
+
+        object-fit: cover;
+
+        transform:
+            translateX(-50%)
+            rotate(-5deg);
+
+        margin: 0 !important;
     }
+
+    .wedding-photo .khung-anh {
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+
+        width: 76%;
+        height: auto;
+
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================
+       ALBUM
+       ========================= */
 
     .album-slider {
         height: 340px;
-        width: 100%;
     }
 
     .album-card {
         width: 210px;
         height: 315px;
-        border-radius: 10px;
     }
 
     .album-card.left-1 {
@@ -2444,13 +2356,185 @@ body::before {
             scale(0.78);
     }
 
-    .album-card.left-2 {
-        opacity: 0.2;
+    .album-card.right-1 {
         transform:
-            translateX(-240px)
-            translateZ(-120px)
-            rotateY(18deg)
-            scale(0.65);
+            translateX(150px)
+            translateZ(-40px)
+            rotateY(-12deg)
+            scale(0.78);
+    }
+
+    .album-prev {
+        left: 12px;
+    }
+
+    .album-next {
+        right: 12px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   376px - 480px
+   Dùng chung một cách căn giữa
+   ========================================================= */
+
+@media screen and (min-width: 376px) and (max-width: 480px) {
+
+    .trang-wedding {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .wedding-cover {
+        width: 100%;
+    }
+
+    .wedding-names {
+        margin-bottom: 38px;
+        font-size: clamp(24px, 7vw, 29px);
+    }
+
+    .wedding-names span {
+        font-size: clamp(20px, 6vw, 24px);
+    }
+
+
+    /* =========================
+       KHUNG ẢNH
+       ========================= */
+
+    .wedding-photo {
+        position: relative;
+
+        width: 100%;
+        max-width: 410px;
+
+        height: 485px;
+
+        margin: 0 auto;
+
+        overflow: visible !important;
+    }
+
+    .wedding-photo .anh-cuoi {
+        position: absolute;
+
+        top: 34px;
+        left: 50%;
+
+        width: 62%;
+        height: auto;
+
+        aspect-ratio: 325 / 490;
+
+        object-fit: cover;
+
+        transform:
+            translateX(-50%)
+            rotate(-5deg);
+
+        margin: 0 !important;
+    }
+
+    .wedding-photo .khung-anh {
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+
+        width: 78%;
+        height: auto;
+
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================
+       THÔNG TIN
+       ========================= */
+
+    .wedding-info {
+        width: 92%;
+        min-height: 680px;
+
+        margin: 60px auto 80px;
+
+        padding: 30px 20px 35px;
+    }
+
+    .info-title {
+        font-size: 18px;
+    }
+
+    .family-side {
+        width: 46%;
+        font-size: 10px;
+    }
+
+    .family-side strong {
+        font-size: 11px;
+    }
+
+    .family-side .address {
+        font-size: 7px;
+    }
+
+    .invitation-text {
+        font-size: 10px;
+    }
+
+    .bride-name,
+    .groom-name {
+        font-size: 30px;
+    }
+
+    .ceremony-time {
+        font-size: 22px;
+    }
+
+    .date-row strong {
+        font-size: 28px;
+    }
+
+    .year {
+        font-size: 17px;
+    }
+
+    .lunar-date {
+        font-size: 8px;
+    }
+
+
+    /* =========================
+       ALBUM
+       ========================= */
+
+    .wedding-album {
+        width: 100%;
+        margin: 55px auto 80px;
+    }
+
+    .album-slider {
+        height: 340px;
+    }
+
+    .album-card {
+        width: 210px;
+        height: 315px;
+    }
+
+    .album-card.left-1 {
+        transform:
+            translateX(-150px)
+            translateZ(-40px)
+            rotateY(12deg)
+            scale(0.78);
     }
 
     .album-card.right-1 {
@@ -2461,404 +2545,23 @@ body::before {
             scale(0.78);
     }
 
+    .album-card.left-2,
     .album-card.right-2 {
         opacity: 0.2;
-        transform:
-            translateX(240px)
-            translateZ(-120px)
-            rotateY(-18deg)
-            scale(0.65);
     }
 
     .album-prev {
-        left: 12px;
+        left: 10px;
     }
 
     .album-next {
-        right: 12px;
-    }
-
-    .album-btn {
-        width: 27px;
-        height: 27px;
-        font-size: 22px;
-        line-height: 25px;
-    }
-
-    .album-dots {
-        margin-top: 35px;
-        gap: 6px;
-    }
-
-    .album-dot {
-        width: 6px;
-        height: 6px;
-    }
-
-    .album-dot.active {
-        width: 18px;
-        height: 6px;
-    }
-
-    /* PARTY */
-    .wedding-party {
-        width: 92%;
-        min-height: 720px;
-        margin: 70px auto 80px;
-        padding: 30px 20px 35px;
-    }
-
-    .party-title {
-        margin-bottom: 25px;
-        font-size: 17px;
-    }
-
-    .party-intro {
-        margin-bottom: 22px;
-        font-size: 17px;
-    }
-
-    .party-time {
-        margin-bottom: 25px;
-        font-size: 23px;
-    }
-
-    .party-date {
-        gap: 12px;
-        font-size: 10px;
-    }
-
-    .party-date strong {
-        font-size: 29px;
-    }
-
-    .party-year {
-        font-size: 17px;
-    }
-
-    .party-lunar {
-        font-size: 8px;
-        letter-spacing: 1.3px;
-    }
-
-    .countdown {
-        font-size: 10px;
-    }
-
-    .wedding-calendar {
-        width: min(280px, 100%);
-    }
-
-    .party-flower-left {
-        left: -48px;
-        bottom: -15px;
-        width: 130px;
-    }
-
-    .party-flower-right {
-        right: -50px;
-        top: 110px;
-        width: 120px;
-    }
-
-    /* LOCATION */
-    .wedding-location {
-        width: 100%;
-        padding: 35px 15px 60px;
-    }
-
-    .location-title h2 {
-        font-size: 14px;
-    }
-
-    .location-title p {
-        font-size: 11px;
-    }
-
-    .map-wrapper {
-        width: 100%;
-        height: 300px;
-    }
-
-    .direction {
-        margin-top: 15px;
-    }
-
-    .dress-code {
-        margin-top: 55px;
-    }
-
-    .dress-code h2 {
-        font-size: 16px;
-    }
-
-    .dress-code p {
-        font-size: 12px;
-    }
-
-    .dress-colors {
-        gap: 15px;
-    }
-
-    .color {
-        width: 36px;
-        height: 36px;
-    }
-
-    /* GUESTBOOK */
-    .guestbook {
-        width: 100%;
-    }
-
-    .guestbook-content {
-        top: 7%;
-        width: 58%;
-    }
-
-    .guestbook-content h2 {
-        margin-bottom: 15px;
-        font-size: 15px;
-    }
-
-    .guest-name {
-        height: 34px;
-        padding: 0 10px;
-        font-size: 10px;
-    }
-
-    .guest-message {
-        height: 95px;
-        margin-top: 10px;
-        padding: 10px;
-        font-size: 10px;
-    }
-
-    .guestbook-actions {
-        gap: 7px;
-    }
-
-    .send-btn {
-        height: 28px;
-        padding: 0 15px;
-        font-size: 10px;
-    }
-
-    .emoji-btn {
-        width: 28px;
-        height: 26px;
-        font-size: 12px;
-    }
-
-    .empty-message {
-        margin-top: 9px;
-        font-size: 9px;
-    }
-
-    .gift-title {
-        max-width: 90%;
-        font-size: 14px;
-        white-space: normal;
-        line-height: 1.3;
-    }
-
-    .thank-you {
-        width: 88%;
-        font-size: 8px;
-    }
-
-    /* GIFT */
-    .gift-section {
-        width: 100%;
-        padding: 0 15px;
-    }
-
-    .title {
-        font-size: 19px;
-    }
-
-    .gift-description {
-        max-width: 100%;
-        margin-bottom: 25px;
-        font-size: 13px;
-        line-height: 1.7;
-    }
-
-    .gift-envelopes {
-        width: min(300px, 100%);
-        height: 240px;
-    }
-
-    .envelope-back {
-        width: 150px !important;
-        top: 5px;
-        right: 0;
-    }
-
-    .envelope-front {
-        width: 205px !important;
-        left: 5px;
-        top: 45px;
-    }
-
-    .gift-open-text {
-        padding-top: 120px !important;
-        font-size: 12px !important;
-        letter-spacing: 1.5px;
-    }
-
-    /* QR */
-    .qr-popup {
-        padding: 12px;
-    }
-
-    .qr-modal {
-        width: 100%;
-        max-width: 380px;
-        max-height: calc(100vh - 24px);
-        border-radius: 15px;
-    }
-
-    .qr-header {
-        height: 60px;
-        padding: 0 50px 0 15px;
-    }
-
-    .qr-title {
-        margin-top: 15px;
-        font-size: 16px;
-    }
-
-    .qr-close {
-        right: 9px;
-        width: 32px;
-        height: 32px;
-        font-size: 23px;
-    }
-
-    .qr-body {
-        min-height: auto;
-        padding: 20px 15px 22px;
-    }
-
-    .qr-name {
-        font-size: 13px;
-    }
-
-    .qr-image-box {
-        width: min(170px, 60vw);
-        height: min(170px, 60vw);
-        padding: 9px;
-    }
-
-    .save-qr {
-        font-size: 11px;
-    }
-
-    .gift-message {
-        margin-top: 22px;
-        font-size: 12px;
+        right: 10px;
     }
 }
 
 
 /* =========================================================
-   481px - 600px
-   Giữ ảnh cân đối, không dùng kích thước px cố định
-   ========================================================= */
-
-@media screen and (min-width: 481px) and (max-width: 600px) {
-
-    .wedding-photo {
-        max-width: 430px;
-        height: 530px;
-    }
-
-    .wedding-photo .anh-cuoi {
-        width: 62%;
-        top: 42px;
-        aspect-ratio: 325 / 490;
-        transform: translateX(-50%) rotate(-7deg);
-    }
-
-    .wedding-photo .khung-anh {
-        width: 76%;
-        transform: translateX(-50%) rotate(-5deg);
-    }
-}
-
-
-/* =========================================================
-   426px - 480px
-   ========================================================= */
-
-@media screen and (min-width: 426px) and (max-width: 480px) {
-
-    .wedding-photo {
-        max-width: 420px;
-        height: 500px;
-    }
-
-    .wedding-photo .anh-cuoi {
-        top: 39px;
-        width: 63%;
-        aspect-ratio: 325 / 490;
-        transform: translateX(-50%) rotate(-6deg);
-    }
-
-    .wedding-photo .khung-anh {
-        width: 79%;
-        transform: translateX(-50%) rotate(-5deg);
-    }
-}
-
-
-/* =========================================================
-   376px - 425px
-   Bao gồm các điện thoại 390 / 393 / 412 / 414 / 425
-   ========================================================= */
-
-@media screen and (min-width: 376px) and (max-width: 425px) {
-
-    .trang-wedding {
-        padding-left: 8px !important;
-        padding-right: 8px !important;
-    }
-
-    .wedding-photo {
-        width: 100%;
-        max-width: 410px;
-        height: 485px;
-    }
-
-    .wedding-photo .anh-cuoi {
-        top: 34px;
-        left: 50%;
-        width: 62%;
-        height: auto;
-        aspect-ratio: 325 / 490;
-        transform: translateX(-50%) rotate(-6deg);
-    }
-
-    .wedding-photo .khung-anh {
-        top: 0;
-        left: 50%;
-        width: 78%;
-        height: auto;
-        transform: translateX(-50%) rotate(-5deg);
-    }
-
-    .wedding-names {
-        font-size: clamp(24px, 7vw, 29px);
-        margin-bottom: 38px;
-    }
-
-    .wedding-names span {
-        font-size: clamp(20px, 6vw, 24px);
-    }
-}
-
-
-/* =========================================================
+   MOBILE
    321px - 375px
    ========================================================= */
 
@@ -2869,41 +2572,110 @@ body::before {
         padding-right: 7px !important;
     }
 
-    .wedding-photo {
-        width: 100%;
-        max-width: 365px;
-        height: 450px;
-    }
-
-    .wedding-photo .anh-cuoi {
-        top: 31px;
-        left: 50%;
-        width: 58%;
-        height: auto;
-        aspect-ratio: 325 / 499;
-        transform: translateX(-54%) rotate(-9deg);
-    }
-
-    .wedding-photo .khung-anh {
-        top: 0;
-        left: 50%;
-        width: 81%;
-        height: auto;
-        transform: translateX(-50%) rotate(-5deg);
-    }
-
     .wedding-names {
-        font-size: 23px;
         margin-bottom: 36px;
+        font-size: 23px;
     }
 
     .wedding-names span {
         font-size: 20px;
     }
+
+
+    /* =========================
+       KHUNG ẢNH
+       ========================= */
+
+    .wedding-photo {
+        position: relative;
+
+        width: 100%;
+        max-width: 365px;
+
+        height: 450px;
+
+        margin: 0 auto;
+
+        overflow: visible !important;
+    }
+
+    .wedding-photo .anh-cuoi {
+        position: absolute;
+
+        top: 31px;
+        left: 50%;
+
+        width: 58%;
+        height: auto;
+
+        aspect-ratio: 325 / 490;
+
+        object-fit: cover;
+
+        transform:
+            translateX(-50%)
+            rotate(-5deg);
+
+        margin: 0 !important;
+    }
+
+    .wedding-photo .khung-anh {
+        position: absolute;
+
+        top: 0;
+        left: 50%;
+
+        width: 81%;
+        height: auto;
+
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+
+        margin: 0 !important;
+    }
+
+
+    /* =========================
+       ALBUM
+       ========================= */
+
+    .album-card {
+        width: 185px;
+        height: 278px;
+    }
+
+    .album-card.left-1 {
+        transform:
+            translateX(-105px)
+            translateZ(-40px)
+            scale(0.70);
+    }
+
+    .album-card.right-1 {
+        transform:
+            translateX(105px)
+            translateZ(-40px)
+            scale(0.70);
+    }
+
+    .album-card.left-2,
+    .album-card.right-2 {
+        opacity: 0;
+    }
+
+    .album-prev {
+        left: 6px;
+    }
+
+    .album-next {
+        right: 6px;
+    }
 }
 
 
 /* =========================================================
+   ĐIỆN THOẠI NHỎ
    <= 320px
    ========================================================= */
 
@@ -2928,28 +2700,64 @@ body::before {
         font-size: 18px;
     }
 
+
+    /* =========================
+       KHUNG ẢNH
+       ========================= */
+
     .wedding-photo {
+        position: relative;
+
         width: 100%;
         max-width: 315px;
+
         height: 410px;
+
+        margin: 0 auto;
+
+        overflow: visible !important;
     }
 
     .wedding-photo .anh-cuoi {
+        position: absolute;
+
         top: 29px;
-        left: 51%;
+        left: 50%;
+
         width: 60%;
         height: auto;
+
         aspect-ratio: 327 / 486;
-        transform: translateX(-50%) rotate(-4deg);
+
+        object-fit: cover;
+
+        transform:
+            translateX(-50%)
+            rotate(-4deg);
+
+        margin: 0 !important;
     }
 
     .wedding-photo .khung-anh {
+        position: absolute;
+
         top: 0;
-        left: 53%;
+        left: 50%;
+
         width: 82%;
         height: auto;
-        transform: translateX(-50%) rotate(1deg);
+
+        transform:
+            translateX(-50%)
+            rotate(1deg);
+
+        margin: 0 !important;
     }
+
+
+    /* =========================
+       ALBUM
+       ========================= */
 
     .album-card {
         width: 165px;
@@ -2982,79 +2790,16 @@ body::before {
     .album-next {
         right: 5px;
     }
-
-    .wedding-calendar {
-        padding: 13px 10px 15px;
-    }
-
-    .calendar-week span {
-        font-size: 7px;
-    }
-
-    .calendar-days span {
-        font-size: 8px;
-    }
-
-    .guestbook-content {
-        width: 63%;
-    }
-
-    .gift-envelopes {
-        width: 250px;
-    }
-
-    .envelope-back {
-        width: 125px !important;
-    }
-
-    .envelope-front {
-        width: 170px !important;
-    }
-
-    .gift-open-text {
-        padding-top: 105px !important;
-        font-size: 11px !important;
-    }
-
-    .qr-popup {
-        padding: 8px;
-    }
-
-    .qr-modal {
-        max-height: calc(100vh - 16px);
-    }
-
-    .qr-header {
-        height: 55px;
-    }
-
-    .qr-title {
-        font-size: 14px;
-    }
-
-    .qr-close {
-        width: 29px;
-        height: 29px;
-        font-size: 20px;
-    }
-
-    .qr-image-box {
-        width: 145px;
-        height: 145px;
-    }
-
-    .qr-name {
-        font-size: 12px;
-    }
 }
 
 
 /* =========================================================
-   FIX CHỐNG TRÀN NGANG TRÊN ĐIỆN THOẠI
+   CHỐNG TRÀN NGANG
    ========================================================= */
 
 html,
 body {
+    width: 100%;
     max-width: 100%;
     overflow-x: hidden;
 }
