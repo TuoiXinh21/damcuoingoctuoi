@@ -1,0 +1,3074 @@
+/* =========================================================
+   WEDDING PAGE - RESPONSIVE CSS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Khu vực nền tối đa 800px */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 50%;
+    width: 1000px;
+    max-width: 100%;
+    height: 100vh;
+
+    transform: translateX(-50%);
+
+    background-image: url("anhcuoi/paper.png");
+    background-repeat: repeat-y;
+    background-position: top center;
+    background-size: 100% auto;
+
+    z-index: -1;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   WEDDING COVER
+   ========================================================= */
+
+.trang-wedding {
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 55px 20px 100px !important;
+
+    overflow: hidden !important;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+}
+
+
+/* =========================================================
+   KHUNG NỘI DUNG CHÍNH
+   ========================================================= */
+
+.wedding-cover {
+    position: relative;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    background-image: url("anhcuoi/house-background.png");
+
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% auto;
+}
+
+
+/* Lớp làm nền nhạt */
+
+.wedding-cover::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 0;
+
+    pointer-events: none;
+}
+
+
+/* Nội dung nằm trên nền */
+
+.wedding-cover > * {
+    position: relative;
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   THE WEDDING OF
+   ========================================================= */
+
+.wedding-subtitle {
+    margin: 0 0 18px;
+
+    color: #81746d;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 12px;
+    font-weight: 400;
+
+    letter-spacing: 4px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TÊN CÔ DÂU - CHÚ RỂ
+   ========================================================= */
+
+.wedding-names {
+    margin: 0 0 58px;
+
+    color: #81736c;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 40px;
+    font-style: italic;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+}
+
+.wedding-names span {
+    margin: 0 5px;
+
+    font-size: 34px;
+}
+
+
+/* =========================================================
+   KHU VỰC ẢNH CƯỚI
+   ========================================================= */
+
+.wedding-photo {
+    position: relative;
+
+    width: min(520px, 95%);
+    height: 700px;
+
+    margin: 0 auto;
+
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   BĂNG KEO
+   ========================================================= */
+
+.wedding-tape {
+    display: none !important;
+}
+
+
+/* =========================================================
+   ẢNH CƯỚI
+   ========================================================= */
+
+.wedding-photo .anh-cuoi {
+    position: absolute;
+    top: 50px;
+    left: 51%;
+    width: 320px;
+    height: 490px;
+    max-width: none;
+    object-fit: cover;
+    transform: translateX(-53%) rotate(-4deg);
+    z-index: 1;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+
+/* =========================================================
+   KHUNG POLAROID
+   ========================================================= */
+
+.wedding-photo .khung-anh {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 450px;
+    max-width: none;
+    height: auto;
+    transform: translateX(-49%) rotate(1deg);
+    z-index: 5;
+    margin: 0 !important;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   THÔNG TIN LỄ CƯỚI
+   ========================================================= */
+
+.wedding-info {
+    position: relative;
+
+    width: min(450px, 92%);
+    min-height: 760px;
+
+    margin: 80px auto 100px;
+
+    padding: 38px 32px 45px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            rgba(249, 244, 236, 0.94),
+            rgba(246, 239, 229, 0.94)
+        ),
+        url("images/paper-texture.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 70, 55, 0.14);
+
+    text-align: center;
+
+    color: #81736c;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TIÊU ĐỀ THÔNG TIN
+   ========================================================= */
+
+.info-title {
+    margin: 0 0 28px;
+
+    color: #756860;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   THÔNG TIN GIA ĐÌNH
+   ========================================================= */
+
+.family-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
+    margin-bottom: 28px;
+}
+
+.family-side {
+    width: 47%;
+
+    text-align: center;
+
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.family-side .small-text {
+    margin-bottom: 5px;
+
+    color: #8e827b;
+
+    font-size: 10px;
+}
+
+.family-side strong {
+    display: block;
+
+    color: #756861;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    line-height: 1.55;
+}
+
+.family-side .address {
+    margin-top: 7px;
+
+    color: #958a83;
+
+    font-size: 8px;
+
+    line-height: 1.5;
+}
+
+.family-line {
+    width: 1px;
+    height: 70px;
+
+    flex-shrink: 0;
+
+    background: #bdb2aa;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================================
+   LỜI MỜI
+   ========================================================= */
+
+.invitation-text {
+    margin: 0 0 30px;
+
+    color: #857a73;
+
+    font-size: 12px;
+    line-height: 1.8;
+
+    letter-spacing: 0.3px;
+}
+
+
+/* =========================================================
+   TÊN CÔ DÂU
+   ========================================================= */
+
+.bride-name {
+    margin: 0 0 18px;
+
+    color: #796b64;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   VAI TRÒ
+   ========================================================= */
+
+.gender {
+    margin: 0 0 16px;
+
+    color: #a29891;
+
+    font-size: 8px;
+
+    letter-spacing: 2.5px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   &
+   ========================================================= */
+
+.and-symbol {
+    margin: 0 0 18px;
+
+    color: #8a7d75;
+
+    font-size: 29px;
+    font-style: italic;
+
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TÊN CHÚ RỂ
+   ========================================================= */
+
+.groom-name {
+    margin: 0 0 18px;
+
+    color: #796b64;
+
+    font-size: 36px;
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   THÔNG TIN LỄ
+   ========================================================= */
+
+.ceremony-text {
+    margin: 10px 0 14px;
+
+    color: #81756e;
+
+    font-size: 12px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   GIỜ
+   ========================================================= */
+
+.ceremony-time {
+    margin: 0 0 28px;
+
+    color: #776961;
+
+    font-size: 25px;
+    font-weight: 400;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   NGÀY
+   ========================================================= */
+
+.date-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 16px;
+
+    color: #81756e;
+
+    font-size: 12px;
+
+    line-height: 1;
+}
+
+.date-row strong {
+    color: #796b64;
+
+    font-size: 32px;
+    font-weight: 400;
+
+    line-height: 1;
+}
+
+.date-row i {
+    display: block;
+
+    width: 1px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    background: #c0b5ad;
+}
+
+
+/* =========================================================
+   NĂM
+   ========================================================= */
+
+.year {
+    margin: 0 0 20px;
+
+    color: #81746d;
+
+    font-size: 19px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   ÂM LỊCH
+   ========================================================= */
+
+.lunar-date {
+    color: #8e837b;
+
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   HOA THÔNG TIN
+   ========================================================= */
+
+.info-flower {
+    position: absolute;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.info-flower img {
+    display: block;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+.info-flower-left {
+    left: -48px;
+    bottom: 125px;
+
+    width: 135px;
+
+    transform: rotate(-8deg);
+}
+
+.info-flower-right {
+    right: -50px;
+    bottom: -5px;
+
+    width: 145px;
+
+    transform: rotate(5deg);
+}
+
+
+/* =========================================================
+   ALBUM
+   ========================================================= */
+
+.wedding-album {
+    position: relative;
+
+    width: 100%;
+    max-width: 1000px;
+
+    margin: 70px auto 110px;
+
+    text-align: center;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TIÊU ĐỀ ALBUM
+   ========================================================= */
+
+.album-title {
+    margin: 0 0 35px;
+
+    color: #796c65;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   SLIDER
+   ========================================================= */
+
+.album-slider {
+    position: relative;
+
+    width: 100%;
+    height: 390px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1200px;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   TRACK
+   ========================================================= */
+
+.album-track {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform-style: preserve-3d;
+}
+
+
+/* =========================================================
+   CARD
+   ========================================================= */
+
+.album-card {
+    position: absolute;
+
+    width: 255px;
+    height: 380px;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    background: #eee;
+
+    box-shadow:
+        0 10px 25px rgba(80, 65, 55, 0.15);
+
+    transition:
+        transform 0.6s ease,
+        opacity 0.6s ease,
+        filter 0.6s ease;
+
+    transform-style: preserve-3d;
+}
+
+.album-card img {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    max-width: none !important;
+
+    object-fit: cover;
+
+    margin: 0 !important;
+}
+
+
+/* =========================================================
+   CARD ACTIVE
+   ========================================================= */
+
+.album-card.active {
+    z-index: 10;
+
+    opacity: 1;
+
+    transform:
+        translateX(0)
+        translateZ(100px)
+        scale(1);
+
+    filter: none;
+}
+
+
+/* =========================================================
+   LEFT 1
+   ========================================================= */
+
+.album-card.left-1 {
+    z-index: 6;
+
+    opacity: 0.9;
+
+    transform:
+        translateX(-210px)
+        translateZ(-40px)
+        rotateY(12deg)
+        scale(0.86);
+}
+
+
+/* =========================================================
+   LEFT 2
+   ========================================================= */
+
+.album-card.left-2 {
+    z-index: 4;
+
+    opacity: 0.45;
+
+    transform:
+        translateX(-370px)
+        translateZ(-120px)
+        rotateY(18deg)
+        scale(0.72);
+}
+
+
+/* =========================================================
+   RIGHT 1
+   ========================================================= */
+
+.album-card.right-1 {
+    z-index: 6;
+
+    opacity: 0.9;
+
+    transform:
+        translateX(210px)
+        translateZ(-40px)
+        rotateY(-12deg)
+        scale(0.86);
+}
+
+
+/* =========================================================
+   RIGHT 2
+   ========================================================= */
+
+.album-card.right-2 {
+    z-index: 4;
+
+    opacity: 0.45;
+
+    transform:
+        translateX(370px)
+        translateZ(-120px)
+        rotateY(-18deg)
+        scale(0.72);
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+.album-card.hidden {
+    opacity: 0;
+    pointer-events: none;
+
+    transform:
+        translateX(0)
+        translateZ(-300px)
+        scale(0.5);
+}
+
+
+/* =========================================================
+   NÚT ALBUM
+   ========================================================= */
+
+.album-btn {
+    position: absolute;
+
+    top: 50%;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(90, 80, 72, 0.65);
+
+    color: #fff;
+
+    font-size: 24px;
+    line-height: 28px;
+
+    cursor: pointer;
+
+    z-index: 30;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.album-btn:hover {
+    background: rgba(70, 60, 52, 0.85);
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+}
+
+.album-prev {
+    left: calc(50% - 285px);
+}
+
+.album-next {
+    right: calc(50% - 285px);
+}
+
+
+/* =========================================================
+   DOTS
+   ========================================================= */
+
+.album-dots {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 45px;
+    margin-bottom: 10px;
+
+    min-height: 20px;
+}
+
+.album-dot {
+    width: 7px;
+    height: 7px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #d8cec5;
+
+    cursor: pointer;
+
+    transition:
+        width 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.album-dot.active {
+    width: 20px;
+    height: 7px;
+
+    border-radius: 10px;
+
+    background: #9a8b82;
+}
+
+
+/* =========================================================
+   THÔNG TIN TIỆC CƯỚI
+   ========================================================= */
+
+.wedding-party {
+    position: relative;
+
+    width: min(450px, 92%);
+    min-height: 765px;
+
+    margin: 90px auto 110px;
+
+    padding: 32px 30px 35px;
+
+    box-sizing: border-box;
+
+    background:
+        linear-gradient(
+            rgba(249, 244, 236, 0.94),
+            rgba(246, 239, 229, 0.94)
+        ),
+        url("images/paper-texture.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(90, 70, 55, 0.14);
+
+    text-align: center;
+
+    color: #81736c;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   PARTY TITLE
+   ========================================================= */
+
+.party-title {
+    margin: 0 0 28px;
+
+    color: #776961;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 1.3;
+}
+
+.party-intro {
+    margin: 0 0 25px;
+
+    color: #81736c;
+
+    font-size: 20px;
+
+    line-height: 1.4;
+}
+
+.party-time {
+    margin: 0 0 28px;
+
+    color: #81736c;
+
+    font-size: 25px;
+
+    line-height: 1.2;
+}
+
+
+/* =========================================================
+   PARTY DATE
+   ========================================================= */
+
+.party-date {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    margin-bottom: 25px;
+
+    color: #81736c;
+
+    font-size: 12px;
+}
+
+.party-date strong {
+    color: #796b64;
+
+    font-size: 32px;
+    font-weight: 400;
+}
+
+.party-date i {
+    width: 1px;
+    height: 20px;
+
+    background: #bdb2aa;
+}
+
+.party-year {
+    margin: 0 0 22px;
+
+    color: #81746d;
+
+    font-size: 18px;
+}
+
+.party-lunar {
+    margin: 0 0 30px;
+
+    color: #8e837b;
+
+    font-size: 9px;
+
+    letter-spacing: 1.7px;
+}
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown-title {
+    margin: 0 0 12px;
+
+    color: #81736c;
+
+    font-size: 11px;
+}
+
+.countdown {
+    margin: 0 0 28px;
+
+    color: #81736c;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   CALENDAR
+   ========================================================= */
+
+.wedding-calendar {
+    width: min(290px, 100%);
+
+    margin: 0 auto 27px;
+
+    padding: 16px 18px 18px;
+
+    box-sizing: border-box;
+
+    background: #827269;
+
+    border-radius: 8px;
+
+    color: #f5eee5;
+}
+
+.calendar-month {
+    margin: 0 0 15px;
+
+    color: #fff;
+
+    font-size: 15px;
+    font-style: italic;
+
+    line-height: 1.3;
+}
+
+.calendar-week {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    padding-bottom: 7px;
+
+    border-bottom:
+        1px solid
+        rgba(255,255,255,0.5);
+}
+
+.calendar-week span {
+    color: #e8ded5;
+
+    font-size: 8px;
+}
+
+.calendar-days {
+    display: grid;
+
+    grid-template-columns: repeat(7, 1fr);
+
+    row-gap: 9px;
+
+    margin-top: 10px;
+
+    align-items: center;
+}
+
+.calendar-days span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 18px;
+
+    color: #f4ece3;
+
+    font-size: 9px;
+}
+
+.calendar-selected {
+    width: 20px;
+    height: 20px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #f7f2eb;
+
+    color: #827269 !important;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PARTY BUTTON
+   ========================================================= */
+
+.add-calendar {
+    display: block;
+
+    width: fit-content;
+
+    margin: 0 auto 24px;
+
+    color: #81736c;
+
+    font-size: 10px;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+}
+
+.add-calendar:hover {
+    color: #655850;
+}
+
+.confirm-attendance {
+    padding: 9px 20px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #827269;
+
+    color: #fff;
+
+    font-family:
+        "Times New Roman",
+        Times,
+        serif;
+
+    font-size: 10px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+.confirm-attendance:hover {
+    background: #6f6159;
+
+    transform: scale(1.04);
+}
+
+
+/* =========================================================
+   HOA PARTY
+   ========================================================= */
+
+.party-flower {
+    position: absolute;
+
+    z-index: 10;
+
+    pointer-events: none;
+}
+
+.party-flower img {
+    display: block;
+
+    width: 100% !important;
+    height: auto !important;
+
+    max-width: none !important;
+
+    margin: 0 !important;
+}
+
+.party-flower-left {
+    left: -45px;
+    bottom: -20px;
+
+    width: 155px;
+
+    transform: rotate(-5deg);
+}
+
+.party-flower-right {
+    right: -45px;
+    top: 120px;
+
+    width: 145px;
+
+    transform: rotate(8deg);
+}
+
+
+/* =========================================================
+   LOCATION
+   ========================================================= */
+
+.wedding-location {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 45px 20px 70px;
+
+    box-sizing: border-box;
+
+    text-align: center;
+
+    color: #796b63;
+}
+
+.location-title {
+    margin-bottom: 15px;
+}
+
+.location-title h2 {
+    margin: 0 0 8px;
+
+    color: #75665e;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.location-title p {
+    margin: 0;
+
+    color: #978b83;
+
+    font-size: 12px;
+}
+
+.map-wrapper {
+    width: min(500px, 100%);
+    height: 320px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    border-radius: 9px;
+
+    box-shadow:
+        0 4px 15px rgba(90, 75, 65, 0.10);
+}
+
+.map-wrapper iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+.direction {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 17px;
+
+    padding: 5px 8px;
+
+    color: #8b7d75;
+
+    text-decoration: none;
+
+    font-size: 13px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.direction-icon {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    color: #8b7d75;
+
+    transform: rotate(-35deg);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.direction:hover {
+    color: #6f6159;
+
+    transform: translateY(-2px);
+}
+
+.direction:hover .direction-icon {
+    transform:
+        rotate(-35deg)
+        translate(2px, -2px);
+}
+
+
+/* =========================================================
+   DRESS CODE
+   ========================================================= */
+
+.dress-code {
+    margin-top: 65px;
+
+    text-align: center;
+
+    color: #796b63;
+}
+
+.dress-code h2 {
+    margin: 0 0 7px;
+
+    color: #75665e;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.dress-code p {
+    margin: 0;
+
+    color: #968981;
+
+    font-size: 13px;
+}
+
+.dress-colors {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 19px;
+
+    margin-top: 20px;
+}
+
+.color {
+    display: block;
+
+    width: 38px;
+    height: 38px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 2px 7px rgba(90, 75, 65, 0.12);
+
+    transition:
+        transform 0.3s ease;
+}
+
+.color:hover {
+    transform: translateY(-4px);
+}
+
+.color-white {
+    background: #ffffff;
+
+    border: 1px solid #eeeeee;
+}
+
+.color-green {
+    background: #aabd9f;
+}
+
+.color-pink {
+    background: #efbfd0;
+}
+
+
+/* =========================================================
+   GUESTBOOK
+   ========================================================= */
+
+.guestbook {
+    position: relative;
+
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+}
+
+.guestbook-image {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    pointer-events: none;
+}
+
+.guestbook-content {
+    position: absolute;
+
+    top: 7.5%;
+    left: 50%;
+
+    width: 44%;
+
+    transform: translateX(-50%);
+
+    text-align: center;
+}
+
+.guestbook-content h2 {
+    margin: 0 0 24px;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 19px;
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   GUEST INPUT
+   ========================================================= */
+
+.guest-name {
+    width: 100%;
+    height: 41px;
+
+    padding: 0 14px;
+
+    border: 1px solid #8c7b70;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+.guest-name::placeholder {
+    color: #aa9c92;
+}
+
+.guest-name:focus {
+    border-color: #75665e;
+}
+
+
+/* =========================================================
+   GUEST MESSAGE
+   ========================================================= */
+
+.guest-message {
+    width: 100%;
+    height: 135px;
+
+    margin-top: 15px;
+
+    padding: 13px 14px;
+
+    box-sizing: border-box;
+
+    resize: none;
+
+    border: 1px solid #8c7b70;
+    border-radius: 7px;
+
+    background: transparent;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    outline: none;
+}
+
+.guest-message::placeholder {
+    color: #aa9c92;
+}
+
+.guest-message:focus {
+    border-color: #75665e;
+}
+
+
+/* =========================================================
+   GUEST ACTIONS
+   ========================================================= */
+
+.guestbook-actions {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.emoji-btn {
+    width: 34px;
+    height: 30px;
+
+    padding: 0;
+
+    flex-shrink: 0;
+
+    border: none;
+    border-radius: 7px;
+
+    background: rgba(210, 201, 190, 0.45);
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.send-btn {
+    height: 33px;
+
+    padding: 0 23px;
+
+    border: none;
+    border-radius: 20px;
+
+    background: #806f65;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.send-btn:hover {
+    background: #6f5f56;
+
+    transform: translateY(-1px);
+}
+
+.empty-message {
+    margin: 15px 0 0;
+
+    color: #91847c;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   GIFT TITLE TRONG GUESTBOOK
+   ========================================================= */
+
+.gift-title {
+    position: absolute;
+
+    top: 49.5%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    letter-spacing: 0.7px;
+
+    white-space: nowrap;
+}
+
+.open-gift {
+    position: absolute;
+
+    top: 83.5%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 150px;
+    height: 40px;
+
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+}
+
+.gift-text {
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    transition: 0.25s ease;
+}
+
+.open-gift:hover .gift-text {
+    color: #554941;
+}
+
+.thank-you {
+    position: absolute;
+
+    bottom: 4.5%;
+    left: 50%;
+
+    width: 90%;
+
+    transform: translateX(-50%);
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #85776e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   GIFT SECTION
+   ========================================================= */
+
+.gift-section {
+    width: 100%;
+    max-width: 800px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+    text-align: center;
+}
+
+.title {
+    margin: 0 0 7px;
+
+    color: #75665e;
+
+    font-size: 20px;
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+}
+
+.gift-description {
+    width: 100%;
+    max-width: 550px;
+
+    margin: 0 auto 35px;
+
+    color: #75665e;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   2 PHONG BÌ
+   ========================================================= */
+
+.gift-envelopes {
+    position: relative;
+
+    width: min(380px, 100%);
+    height: 300px;
+
+    margin: 0 auto;
+}
+
+.envelope {
+    position: absolute;
+
+    height: auto !important;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.3s ease;
+}
+
+.envelope-back {
+    width: 190px !important;
+
+    top: 5px;
+    right: 0;
+
+    transform: rotate(13deg);
+
+    z-index: 1;
+}
+
+.envelope-front {
+    width: 260px !important;
+
+    left: 5px;
+    top: 55px;
+
+    transform: rotate(-7deg);
+
+    z-index: 2;
+}
+
+.gift-envelopes:hover .envelope-back {
+    transform:
+        rotate(16deg)
+        translate(5px, -5px);
+}
+
+.gift-envelopes:hover .envelope-front {
+    transform:
+        rotate(-9deg)
+        translate(-3px, -5px);
+}
+
+
+/* =========================================================
+   NHẤN ĐỂ MỞ
+   ========================================================= */
+
+.gift-open-area {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    text-align: center;
+
+    z-index: 100;
+}
+
+.gift-open-text {
+    display: inline-block !important;
+
+    padding-top: 149px !important;
+
+    color: #75665e !important;
+
+    font-size: 14px !important;
+    font-weight: 500 !important;
+
+    letter-spacing: 2px;
+
+    line-height: 1.5;
+
+    cursor: pointer;
+
+    visibility: visible !important;
+    opacity: 1 !important;
+
+    text-decoration: none;
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+}
+
+.gift-open-text::after {
+    content: "";
+
+    display: block;
+
+    width: 100%;
+    height: 1px;
+
+    margin-top: 3px;
+
+    background: #75665e;
+}
+
+.gift-open-text:hover {
+    opacity: 0.6 !important;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   QR POPUP
+   ========================================================= */
+
+.qr-popup {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+
+    z-index: 999999;
+}
+
+.qr-popup.active {
+    display: flex;
+}
+
+.qr-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(2px);
+}
+
+
+/* =========================================================
+   QR MODAL
+   ========================================================= */
+
+.qr-modal {
+    position: relative;
+
+    width: min(520px, 100%);
+
+    max-height: calc(100vh - 30px);
+
+    overflow: hidden;
+    overflow-y: auto;
+
+    background: #fff8f4;
+
+    border-radius: 16px;
+
+    z-index: 2;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.25);
+
+    animation:
+        popupShow 0.3s ease;
+}
+
+
+/* =========================================================
+   QR HEADER
+   ========================================================= */
+
+.qr-header {
+    position: relative;
+
+    height: 64px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 55px 0 20px;
+
+    background: #806f65;
+
+    color: white;
+}
+
+.qr-title {
+    margin: 20px 0 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    text-align: center;
+}
+
+.gift-message {
+    margin: 30px 0 0;
+
+    color: #806f65;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   QR CLOSE
+   ========================================================= */
+
+.qr-close {
+    position: absolute;
+
+    top: 50%;
+    right: 10px;
+
+    transform: translateY(-50%);
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    border-radius: 50%;
+
+    background: #181818;
+
+    color: white;
+
+    font-size: 25px;
+    font-weight: 300;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.qr-close:hover {
+    transform:
+        translateY(-50%)
+        scale(1.08);
+}
+
+
+/* =========================================================
+   QR BODY
+   ========================================================= */
+
+.qr-body {
+    min-height: 278px;
+
+    padding: 22px 20px 24px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    box-sizing: border-box;
+}
+
+.qr-name {
+    margin: 0 0 12px;
+
+    color: #806f65;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   QR IMAGE
+   ========================================================= */
+
+.qr-image-box {
+    width: 172px;
+    height: 172px;
+
+    padding: 10px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+
+    background: #ffffff;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.12);
+
+    flex-shrink: 0;
+}
+
+.qr-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   SAVE QR
+   ========================================================= */
+
+.save-qr {
+    margin-top: 8px;
+
+    padding: 6px 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    background: #eee7e2;
+
+    color: #806f65;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 12px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.save-qr:hover {
+    background: #e2d9d3;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   POPUP ANIMATION
+   ========================================================= */
+
+@keyframes popupShow {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.90)
+            translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+/* =========================================================
+   =========================================================
+   TABLET
+   601px - 900px
+   =========================================================
+   ========================================================= */
+/* =========================================================
+   RESPONSIVE MỚI - GỌN VÀ KHÔNG GHI ĐÈ LẪN NHAU
+   900px / 600px / 480px / 425px / 375px / 340px / 320px
+   ========================================================= */
+
+@media screen and (max-width: 900px) {
+
+    .trang-wedding {
+        padding: 45px 15px 80px !important;
+    }
+
+    .album-card.left-2 {
+        transform:
+            translateX(-320px)
+            translateZ(-120px)
+            rotateY(18deg)
+            scale(0.68);
+    }
+
+    .album-card.right-2 {
+        transform:
+            translateX(320px)
+            translateZ(-120px)
+            rotateY(-18deg)
+            scale(0.68);
+    }
+
+    .album-prev {
+        left: 20px;
+    }
+
+    .album-next {
+        right: 20px;
+    }
+
+    .guestbook-content {
+        width: 48%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE 601px - 900px
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .trang-wedding {
+        padding: 40px 10px 70px !important;
+    }
+
+    .wedding-cover {
+        width: 100%;
+        background-size: 100% auto;
+    }
+
+    .wedding-subtitle {
+        margin-bottom: 15px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .wedding-names {
+        margin-bottom: 42px;
+        font-size: clamp(24px, 8vw, 30px);
+        line-height: 1.25;
+    }
+
+    .wedding-names span {
+        margin: 0 3px;
+        font-size: clamp(21px, 7vw, 25px);
+    }
+
+    /* ẢNH CƯỚI */
+    .wedding-photo {
+        width: 100%;
+        max-width: 430px;
+        height: 530px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .wedding-photo .anh-cuoi {
+        top: 31px;
+        left: 55%;
+        width: 56%;
+        height: auto;
+        aspect-ratio: 378 / 557;
+        object-fit: cover;
+        transform: translateX(-54%) rotate(-3deg);
+    }
+
+    .wedding-photo .khung-anh {
+        top: 0;
+        left: 55%;
+        width: 76%;
+        height: auto;
+        transform: translateX(-50%) rotate(1deg);
+    }
+
+    /* THÔNG TIN */
+    .wedding-info {
+        width: 92%;
+        min-height: 680px;
+        margin: 60px auto 80px;
+        padding: 30px 20px 35px;
+        border-radius: 10px;
+    }
+
+    .info-title {
+        margin-bottom: 22px;
+        font-size: 18px;
+    }
+
+    .family-info {
+        margin-bottom: 24px;
+    }
+
+    .family-side {
+        width: 46%;
+        font-size: 10px;
+    }
+
+    .family-side .small-text {
+        font-size: 9px;
+    }
+
+    .family-side strong {
+        font-size: 11px;
+    }
+
+    .family-side .address {
+        font-size: 7px;
+    }
+
+    .family-line {
+        height: 60px;
+    }
+
+    .invitation-text {
+        margin-bottom: 25px;
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .bride-name,
+    .groom-name {
+        font-size: 30px;
+        line-height: 1.2;
+    }
+
+    .gender {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .and-symbol {
+        font-size: 25px;
+    }
+
+    .ceremony-text {
+        font-size: 10px;
+        line-height: 1.8;
+    }
+
+    .ceremony-time {
+        margin-bottom: 25px;
+        font-size: 22px;
+    }
+
+    .date-row {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .date-row strong {
+        font-size: 28px;
+    }
+
+    .date-row i {
+        height: 18px;
+    }
+
+    .year {
+        font-size: 17px;
+    }
+
+    .lunar-date {
+        font-size: 8px;
+        letter-spacing: 1.4px;
+    }
+
+    .info-flower-left {
+        left: -48px;
+        bottom: 95px;
+        width: 115px;
+    }
+
+    .info-flower-right {
+        right: -48px;
+        bottom: -5px;
+        width: 125px;
+    }
+
+    /* ALBUM */
+    .wedding-album {
+        width: 100%;
+        margin: 55px auto 80px;
+    }
+
+    .album-title {
+        margin-bottom: 28px;
+        font-size: 17px;
+    }
+
+    .album-slider {
+        height: 340px;
+        width: 100%;
+    }
+
+    .album-card {
+        width: 210px;
+        height: 315px;
+        border-radius: 10px;
+    }
+
+    .album-card.left-1 {
+        transform:
+            translateX(-150px)
+            translateZ(-40px)
+            rotateY(12deg)
+            scale(0.78);
+    }
+
+    .album-card.left-2 {
+        opacity: 0.2;
+        transform:
+            translateX(-240px)
+            translateZ(-120px)
+            rotateY(18deg)
+            scale(0.65);
+    }
+
+    .album-card.right-1 {
+        transform:
+            translateX(150px)
+            translateZ(-40px)
+            rotateY(-12deg)
+            scale(0.78);
+    }
+
+    .album-card.right-2 {
+        opacity: 0.2;
+        transform:
+            translateX(240px)
+            translateZ(-120px)
+            rotateY(-18deg)
+            scale(0.65);
+    }
+
+    .album-prev {
+        left: 12px;
+    }
+
+    .album-next {
+        right: 12px;
+    }
+
+    .album-btn {
+        width: 27px;
+        height: 27px;
+        font-size: 22px;
+        line-height: 25px;
+    }
+
+    .album-dots {
+        margin-top: 35px;
+        gap: 6px;
+    }
+
+    .album-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .album-dot.active {
+        width: 18px;
+        height: 6px;
+    }
+
+    /* PARTY */
+    .wedding-party {
+        width: 92%;
+        min-height: 720px;
+        margin: 70px auto 80px;
+        padding: 30px 20px 35px;
+    }
+
+    .party-title {
+        margin-bottom: 25px;
+        font-size: 17px;
+    }
+
+    .party-intro {
+        margin-bottom: 22px;
+        font-size: 17px;
+    }
+
+    .party-time {
+        margin-bottom: 25px;
+        font-size: 23px;
+    }
+
+    .party-date {
+        gap: 12px;
+        font-size: 10px;
+    }
+
+    .party-date strong {
+        font-size: 29px;
+    }
+
+    .party-year {
+        font-size: 17px;
+    }
+
+    .party-lunar {
+        font-size: 8px;
+        letter-spacing: 1.3px;
+    }
+
+    .countdown {
+        font-size: 10px;
+    }
+
+    .wedding-calendar {
+        width: min(280px, 100%);
+    }
+
+    .party-flower-left {
+        left: -48px;
+        bottom: -15px;
+        width: 130px;
+    }
+
+    .party-flower-right {
+        right: -50px;
+        top: 110px;
+        width: 120px;
+    }
+
+    /* LOCATION */
+    .wedding-location {
+        width: 100%;
+        padding: 35px 15px 60px;
+    }
+
+    .location-title h2 {
+        font-size: 14px;
+    }
+
+    .location-title p {
+        font-size: 11px;
+    }
+
+    .map-wrapper {
+        width: 100%;
+        height: 300px;
+    }
+
+    .direction {
+        margin-top: 15px;
+    }
+
+    .dress-code {
+        margin-top: 55px;
+    }
+
+    .dress-code h2 {
+        font-size: 16px;
+    }
+
+    .dress-code p {
+        font-size: 12px;
+    }
+
+    .dress-colors {
+        gap: 15px;
+    }
+
+    .color {
+        width: 36px;
+        height: 36px;
+    }
+
+    /* GUESTBOOK */
+    .guestbook {
+        width: 100%;
+    }
+
+    .guestbook-content {
+        top: 7%;
+        width: 58%;
+    }
+
+    .guestbook-content h2 {
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+
+    .guest-name {
+        height: 34px;
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    .guest-message {
+        height: 95px;
+        margin-top: 10px;
+        padding: 10px;
+        font-size: 10px;
+    }
+
+    .guestbook-actions {
+        gap: 7px;
+    }
+
+    .send-btn {
+        height: 28px;
+        padding: 0 15px;
+        font-size: 10px;
+    }
+
+    .emoji-btn {
+        width: 28px;
+        height: 26px;
+        font-size: 12px;
+    }
+
+    .empty-message {
+        margin-top: 9px;
+        font-size: 9px;
+    }
+
+    .gift-title {
+        max-width: 90%;
+        font-size: 14px;
+        white-space: normal;
+        line-height: 1.3;
+    }
+
+    .thank-you {
+        width: 88%;
+        font-size: 8px;
+    }
+
+    /* GIFT */
+    .gift-section {
+        width: 100%;
+        padding: 0 15px;
+    }
+
+    .title {
+        font-size: 19px;
+    }
+
+    .gift-description {
+        max-width: 100%;
+        margin-bottom: 25px;
+        font-size: 13px;
+        line-height: 1.7;
+    }
+
+    .gift-envelopes {
+        width: min(300px, 100%);
+        height: 240px;
+    }
+
+    .envelope-back {
+        width: 150px !important;
+        top: 5px;
+        right: 0;
+    }
+
+    .envelope-front {
+        width: 205px !important;
+        left: 5px;
+        top: 45px;
+    }
+
+    .gift-open-text {
+        padding-top: 120px !important;
+        font-size: 12px !important;
+        letter-spacing: 1.5px;
+    }
+
+    /* QR */
+    .qr-popup {
+        padding: 12px;
+    }
+
+    .qr-modal {
+        width: 100%;
+        max-width: 380px;
+        max-height: calc(100vh - 24px);
+        border-radius: 15px;
+    }
+
+    .qr-header {
+        height: 60px;
+        padding: 0 50px 0 15px;
+    }
+
+    .qr-title {
+        margin-top: 15px;
+        font-size: 16px;
+    }
+
+    .qr-close {
+        right: 9px;
+        width: 32px;
+        height: 32px;
+        font-size: 23px;
+    }
+
+    .qr-body {
+        min-height: auto;
+        padding: 20px 15px 22px;
+    }
+
+    .qr-name {
+        font-size: 13px;
+    }
+
+    .qr-image-box {
+        width: min(170px, 60vw);
+        height: min(170px, 60vw);
+        padding: 9px;
+    }
+
+    .save-qr {
+        font-size: 11px;
+    }
+
+    .gift-message {
+        margin-top: 22px;
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   481px - 600px
+   Giữ ảnh cân đối, không dùng kích thước px cố định
+   ========================================================= */
+
+@media screen and (min-width: 481px) and (max-width: 600px) {
+
+    .wedding-photo {
+        max-width: 430px;
+        height: 530px;
+    }
+
+    .wedding-photo .anh-cuoi {
+        width: 62%;
+        top: 42px;
+        aspect-ratio: 325 / 490;
+        transform: translateX(-50%) rotate(-7deg);
+    }
+
+    .wedding-photo .khung-anh {
+        width: 76%;
+        transform: translateX(-50%) rotate(-5deg);
+    }
+}
+
+
+/* =========================================================
+   426px - 480px
+   ========================================================= */
+
+@media screen and (min-width: 426px) and (max-width: 480px) {
+
+    .wedding-photo {
+        max-width: 420px;
+        height: 500px;
+    }
+
+    .wedding-photo .anh-cuoi {
+        top: 39px;
+        width: 63%;
+        aspect-ratio: 325 / 490;
+        transform: translateX(-50%) rotate(-6deg);
+    }
+
+    .wedding-photo .khung-anh {
+        width: 79%;
+        transform: translateX(-50%) rotate(-5deg);
+    }
+}
+
+
+/* =========================================================
+   376px - 425px
+   Bao gồm các điện thoại 390 / 393 / 412 / 414 / 425
+   ========================================================= */
+
+@media screen and (min-width: 376px) and (max-width: 425px) {
+
+    .trang-wedding {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+    .wedding-photo {
+        width: 100%;
+        max-width: 410px;
+        height: 485px;
+    }
+
+    .wedding-photo .anh-cuoi {
+        top: 34px;
+        left: 50%;
+        width: 62%;
+        height: auto;
+        aspect-ratio: 325 / 490;
+        transform: translateX(-50%) rotate(-6deg);
+    }
+
+    .wedding-photo .khung-anh {
+        top: 0;
+        left: 50%;
+        width: 78%;
+        height: auto;
+        transform: translateX(-50%) rotate(-5deg);
+    }
+
+    .wedding-names {
+        font-size: clamp(24px, 7vw, 29px);
+        margin-bottom: 38px;
+    }
+
+    .wedding-names span {
+        font-size: clamp(20px, 6vw, 24px);
+    }
+}
+
+
+/* =========================================================
+   321px - 375px
+   ========================================================= */
+
+@media screen and (min-width: 321px) and (max-width: 375px) {
+
+    .trang-wedding {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+
+    .wedding-photo {
+        width: 100%;
+        max-width: 365px;
+        height: 450px;
+    }
+
+    .wedding-photo .anh-cuoi {
+        top: 31px;
+        left: 50%;
+        width: 58%;
+        height: auto;
+        aspect-ratio: 325 / 499;
+        transform: translateX(-54%) rotate(-9deg);
+    }
+
+    .wedding-photo .khung-anh {
+        top: 0;
+        left: 50%;
+        width: 81%;
+        height: auto;
+        transform: translateX(-50%) rotate(-5deg);
+    }
+
+    .wedding-names {
+        font-size: 23px;
+        margin-bottom: 36px;
+    }
+
+    .wedding-names span {
+        font-size: 20px;
+    }
+}
+
+
+/* =========================================================
+   <= 320px
+   ========================================================= */
+
+@media screen and (max-width: 320px) {
+
+    .trang-wedding {
+        padding-left: 5px !important;
+        padding-right: 5px !important;
+    }
+
+    .wedding-subtitle {
+        font-size: 9px;
+        letter-spacing: 2.5px;
+    }
+
+    .wedding-names {
+        font-size: 21px;
+        margin-bottom: 32px;
+    }
+
+    .wedding-names span {
+        font-size: 18px;
+    }
+
+    .wedding-photo {
+        width: 100%;
+        max-width: 315px;
+        height: 410px;
+    }
+
+    .wedding-photo .anh-cuoi {
+        top: 29px;
+        left: 51%;
+        width: 60%;
+        height: auto;
+        aspect-ratio: 327 / 486;
+        transform: translateX(-50%) rotate(-4deg);
+    }
+
+    .wedding-photo .khung-anh {
+        top: 0;
+        left: 53%;
+        width: 82%;
+        height: auto;
+        transform: translateX(-50%) rotate(1deg);
+    }
+
+    .album-card {
+        width: 165px;
+        height: 248px;
+    }
+
+    .album-card.left-1 {
+        transform:
+            translateX(-90px)
+            translateZ(-40px)
+            scale(0.68);
+    }
+
+    .album-card.right-1 {
+        transform:
+            translateX(90px)
+            translateZ(-40px)
+            scale(0.68);
+    }
+
+    .album-card.left-2,
+    .album-card.right-2 {
+        opacity: 0;
+    }
+
+    .album-prev {
+        left: 5px;
+    }
+
+    .album-next {
+        right: 5px;
+    }
+
+    .wedding-calendar {
+        padding: 13px 10px 15px;
+    }
+
+    .calendar-week span {
+        font-size: 7px;
+    }
+
+    .calendar-days span {
+        font-size: 8px;
+    }
+
+    .guestbook-content {
+        width: 63%;
+    }
+
+    .gift-envelopes {
+        width: 250px;
+    }
+
+    .envelope-back {
+        width: 125px !important;
+    }
+
+    .envelope-front {
+        width: 170px !important;
+    }
+
+    .gift-open-text {
+        padding-top: 105px !important;
+        font-size: 11px !important;
+    }
+
+    .qr-popup {
+        padding: 8px;
+    }
+
+    .qr-modal {
+        max-height: calc(100vh - 16px);
+    }
+
+    .qr-header {
+        height: 55px;
+    }
+
+    .qr-title {
+        font-size: 14px;
+    }
+
+    .qr-close {
+        width: 29px;
+        height: 29px;
+        font-size: 20px;
+    }
+
+    .qr-image-box {
+        width: 145px;
+        height: 145px;
+    }
+
+    .qr-name {
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   FIX CHỐNG TRÀN NGANG TRÊN ĐIỆN THOẠI
+   ========================================================= */
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+img,
+iframe,
+video {
+    max-width: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    max-width: 100%;
+    box-sizing: border-box;
+}
