@@ -1,0 +1,907 @@
+/* =========================================================
+   MÀN HÌNH MỞ THIỆP
+========================================================= */
+
+.wedding-cover-screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ead7c5;
+
+    overflow: hidden;
+
+    z-index: 99999;
+
+    transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+}
+
+
+/* =========================================================
+   ẨN MÀN HÌNH
+========================================================= */
+
+.wedding-cover-screen.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   KHUNG THIỆP
+========================================================= */
+
+.cover-card {
+    position: relative;
+
+    width: 600px;
+    height: 400px;
+
+    box-sizing: border-box;
+
+    background: #fdfaf7;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 45px rgba(73, 55, 43, 0.30),
+        0 5px 15px rgba(73, 55, 43, 0.12);
+}
+
+
+/* =========================================================
+   HOA CHUNG
+========================================================= */
+
+.cover-flower {
+    position: absolute;
+
+    top: 0;
+
+    width: 190px;
+    height: 280px;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.cover-flower img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HOA TRÁI
+========================================================= */
+
+.cover-flower-left {
+    left: -67px;
+    transform: rotate(32deg);
+}
+
+
+/* =========================================================
+   HOA PHẢI
+========================================================= */
+
+.cover-flower-right {
+    right: -44px;
+    transform: rotate(-8deg);
+    top: 28px;
+}
+
+
+/* =========================================================
+   TRÁI TIM
+========================================================= */
+
+.cover-heart {
+    position: relative;
+
+    z-index: 3;
+
+    width: 50px;
+    height: 50px;
+
+    margin: 30px auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #76645b;
+
+    color: #ffffff;
+
+    font-size: 22px;
+
+    line-height: 1;
+
+    box-shadow:
+        0 6px 15px rgba(75, 57, 47, 0.25);
+}
+
+
+/* =========================================================
+   TÊN CÔ DÂU - CHÚ RỂ
+========================================================= */
+
+.cover-names {
+    position: relative;
+
+    z-index: 3;
+
+    color: #806e64;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    font-weight: 400;
+}
+
+.cover-names span {
+    display: block;
+
+    margin: 2px 0;
+
+    color: #8d7c72;
+
+    font-size: 17px;
+}
+
+
+/* =========================================================
+   ĐƯỜNG TRANG TRÍ
+========================================================= */
+
+.cover-line {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 12px;
+}
+
+.cover-line span {
+    width: 38px;
+    height: 1px;
+
+    background: #aa978b;
+}
+
+.cover-line i {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #aa978b;
+}
+
+
+/* =========================================================
+   NGÀY CƯỚI
+========================================================= */
+
+.cover-date {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 12px;
+
+    color: #a18f84;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   THÂN MỜI
+========================================================= */
+
+.cover-invite {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 35px;
+
+    color: #aa9a90;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   NÚT MỞ THIỆP
+========================================================= */
+
+.cover-open {
+    position: relative;
+
+    z-index: 4;
+
+    width: 125px;
+    height: 44px;
+
+    margin-top: 25px;
+
+    border: none;
+
+    border-radius: 25px;
+
+    background: #806f65;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(73, 55, 43, 0.25);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+.cover-open:hover {
+    background: #6d5c53;
+
+    transform: translateY(-2px);
+}
+
+.cover-open:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESPONSIVE 425PX
+========================================================= */
+
+@media screen and (max-width: 425px) {
+
+    .cover-card {
+        width: 90vw;
+        height: 75vh;
+
+        max-height: 500px;
+    }
+
+
+    /* HOA */
+
+    .cover-flower {
+        width: 125px;
+        height: 190px;
+    }
+
+    .cover-flower-left {
+        left: -30px;
+
+        transform: rotate(-12deg);
+
+        transform-origin: bottom center;
+    }
+
+    .cover-flower-right {
+        right: -30px;
+
+        transform: rotate(12deg);
+
+        transform-origin: bottom center;
+    }
+
+
+    /* TRÁI TIM */
+
+    .cover-heart {
+        width: 40px;
+        height: 40px;
+
+        margin-top: 22px;
+        margin-bottom: 12px;
+
+        font-size: 18px;
+    }
+
+
+    /* TÊN */
+
+    .cover-names {
+        font-size: 25px;
+    }
+
+    .cover-names span {
+        font-size: 14px;
+    }
+
+
+    /* ĐƯỜNG KẺ */
+
+    .cover-line {
+        margin-top: 9px;
+    }
+
+    .cover-line span {
+        width: 30px;
+    }
+
+
+    /* NGÀY */
+
+    .cover-date {
+        margin-top: 9px;
+
+        font-size: 12px;
+    }
+
+
+    /* THÂN MỜI */
+
+    .cover-invite {
+        margin-top: 25px;
+
+        font-size: 12px;
+    }
+
+
+    /* NÚT */
+
+    .cover-open {
+        width: 105px;
+        height: 38px;
+
+        margin-top: 18px;
+
+        font-size: 12px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 375PX
+========================================================= */
+
+@media screen and (max-width: 375px) {
+
+    .cover-card {
+        width: 90vw;
+        height: 72vh;
+    }
+
+
+    /* HOA */
+
+    .cover-flower {
+        width: 108px;
+        height: 170px;
+    }
+
+    .cover-flower-left {
+        left: -27px;
+
+        transform: rotate(-11deg);
+    }
+
+    .cover-flower-right {
+        right: -27px;
+
+        transform: rotate(11deg);
+    }
+
+
+    /* TRÁI TIM */
+
+    .cover-heart {
+        width: 36px;
+        height: 36px;
+
+        margin-top: 18px;
+        margin-bottom: 10px;
+
+        font-size: 16px;
+    }
+
+
+    /* TÊN */
+
+    .cover-names {
+        font-size: 22px;
+    }
+
+    .cover-names span {
+        font-size: 12px;
+    }
+
+
+    /* ĐƯỜNG KẺ */
+
+    .cover-line {
+        margin-top: 8px;
+    }
+
+    .cover-line span {
+        width: 26px;
+    }
+
+
+    /* NGÀY */
+
+    .cover-date {
+        margin-top: 8px;
+
+        font-size: 11px;
+    }
+
+
+    /* THÂN MỜI */
+
+    .cover-invite {
+        margin-top: 20px;
+
+        font-size: 11px;
+    }
+
+
+    /* NÚT */
+
+    .cover-open {
+        width: 95px;
+        height: 35px;
+
+        margin-top: 15px;
+
+        font-size: 11px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE 320PX
+========================================================= */
+
+@media screen and (max-width: 320px) {
+
+    .cover-card {
+        width: 90vw;
+        height: 68vh;
+    }
+
+
+    /* HOA */
+
+    .cover-flower {
+        width: 92px;
+        height: 150px;
+    }
+
+    .cover-flower-left {
+        left: -24px;
+
+        transform: rotate(-10deg);
+    }
+
+    .cover-flower-right {
+        right: -24px;
+
+        transform: rotate(10deg);
+    }
+
+
+    /* TRÁI TIM */
+
+    .cover-heart {
+        width: 32px;
+        height: 32px;
+
+        margin-top: 15px;
+        margin-bottom: 8px;
+
+        font-size: 14px;
+    }
+
+
+    /* TÊN */
+
+    .cover-names {
+        font-size: 19px;
+    }
+
+    .cover-names span {
+        font-size: 11px;
+    }
+
+
+    /* ĐƯỜNG KẺ */
+
+    .cover-line {
+        margin-top: 6px;
+    }
+
+    .cover-line span {
+        width: 22px;
+    }
+
+    .cover-line i {
+        width: 4px;
+        height: 4px;
+    }
+
+
+    /* NGÀY */
+
+    .cover-date {
+        margin-top: 6px;
+
+        font-size: 10px;
+    }
+
+
+    /* THÂN MỜI */
+
+    .cover-invite {
+        margin-top: 16px;
+
+        font-size: 10px;
+    }
+
+
+    /* NÚT */
+
+    .cover-open {
+        width: 88px;
+        height: 32px;
+
+        margin-top: 12px;
+
+        font-size: 10px;
+    }
+}
+/* =========================================================
+   MÀN HÌNH MỞ THIỆP
+   TỶ LỆ GỐC: 600 × 500
+========================================================= */
+
+.wedding-cover-screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #ead7c5;
+
+    overflow: hidden;
+
+    z-index: 99999;
+}
+
+
+/* =========================================================
+   KHUNG GỐC
+========================================================= */
+
+.cover-card {
+    position: relative;
+
+    width: min(600px, 90vw);
+    aspect-ratio: 600 / 500;
+
+    background: #fdfaf7;
+
+    border-radius: 6px;
+
+    overflow: hidden;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 45px rgba(73, 55, 43, 0.30),
+        0 5px 15px rgba(73, 55, 43, 0.12);
+}
+
+
+/* =========================================================
+   HOA
+========================================================= */
+
+.cover-flower {
+    position: absolute;
+
+    top: 0;
+
+    width: 31.67%;
+    height: 56%;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+.cover-flower img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HOA TRÁI
+========================================================= */
+
+.cover-flower-left {
+    left: -6.5%;
+
+    transform: rotate(-12deg);
+
+    transform-origin: bottom center;
+}
+
+
+/* =========================================================
+   HOA PHẢI
+========================================================= */
+
+.cover-flower-right {
+    right: -6.5%;
+
+    transform: rotate(12deg);
+
+    transform-origin: bottom center;
+}
+
+
+/* =========================================================
+   TRÁI TIM
+========================================================= */
+
+.cover-heart {
+    position: relative;
+
+    z-index: 3;
+
+    width: 8.33%;
+    aspect-ratio: 1;
+
+    margin: 6% auto 2.3%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #76645b;
+
+    color: #fff;
+
+    font-size: 22px;
+
+    box-shadow:
+        0 6px 15px rgba(75, 57, 47, 0.25);
+}
+
+
+/* =========================================================
+   TÊN
+========================================================= */
+
+.cover-names {
+    position: relative;
+
+    z-index: 3;
+
+    color: #806e64;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(22px, 5.33vw, 32px);
+
+    line-height: 1.2;
+
+    font-weight: 400;
+}
+
+.cover-names span {
+    display: block;
+
+    margin: 2px 0;
+
+    font-size: 17px;
+
+    color: #8d7c72;
+}
+
+
+/* =========================================================
+   ĐƯỜNG KẺ
+========================================================= */
+
+.cover-line {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 2%;
+}
+
+.cover-line span {
+    width: 6.33%;
+
+    height: 1px;
+
+    background: #aa978b;
+}
+
+.cover-line i {
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    background: #aa978b;
+}
+
+
+/* =========================================================
+   NGÀY
+========================================================= */
+
+.cover-date {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 2%;
+
+    color: #a18f84;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   THÂN MỜI
+========================================================= */
+
+.cover-invite {
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 7%;
+
+    color: #aa9a90;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   NÚT MỞ THIỆP
+========================================================= */
+
+.cover-open {
+    position: relative;
+
+    z-index: 4;
+
+    width: 20.8%;
+    height: 8.8%;
+
+    margin-top: 5%;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background: #806f65;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 6px 15px rgba(73, 55, 43, 0.25);
+
+    transition: 0.25s ease;
+}
+
+.cover-open:hover {
+    background: #6d5c53;
+
+    transform: translateY(-2px);
+}

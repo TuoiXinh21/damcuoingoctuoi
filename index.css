@@ -566,19 +566,46 @@ body::before {
 .info-flower-left {
     left: -48px;
     bottom: 125px;
-
     width: 135px;
-
     transform: rotate(-8deg);
+
+    animation: flowerUpDown 3s ease-in-out infinite;
+}
+
+@keyframes flowerUpDown {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-8deg);
+    }
 }
 
 .info-flower-right {
     right: -50px;
     bottom: -5px;
-
     width: 145px;
 
-    transform: rotate(5deg);
+    animation: flowerRightFloat 3.5s ease-in-out infinite;
+}
+
+@keyframes flowerRightFloat {
+    0% {
+        transform: translateY(0) rotate(5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(5deg);
+    }
 }
 
 
@@ -1231,21 +1258,46 @@ body::before {
 .party-flower-left {
     left: -45px;
     bottom: -20px;
-
     width: 155px;
 
-    transform: rotate(-5deg);
+    animation: partyFlowerLeftFloat 3s ease-in-out infinite;
+}
+
+@keyframes partyFlowerLeftFloat {
+    0% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(-8deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
 }
 
 .party-flower-right {
     right: -45px;
     top: 120px;
-
     width: 145px;
 
-    transform: rotate(8deg);
+    animation: partyFlowerRightFloat 3.5s ease-in-out infinite;
 }
 
+@keyframes partyFlowerRightFloat {
+    0% {
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(5deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(8deg);
+    }
+}
 
 /* =========================================================
    LOCATION
@@ -1443,7 +1495,6 @@ body::before {
     background: #efbfd0;
 }
 
-
 /* =========================================================
    GUESTBOOK
    ========================================================= */
@@ -1459,6 +1510,11 @@ body::before {
     overflow: hidden;
 }
 
+
+/* =========================================================
+   GUESTBOOK IMAGE
+   ========================================================= */
+
 .guestbook-image {
     display: block;
 
@@ -1467,6 +1523,11 @@ body::before {
 
     pointer-events: none;
 }
+
+
+/* =========================================================
+   GUESTBOOK CONTENT
+   ========================================================= */
 
 .guestbook-content {
     position: absolute;
@@ -1499,12 +1560,16 @@ body::before {
 
 
 /* =========================================================
-   GUEST INPUT
+   GUEST NAME
    ========================================================= */
 
 .guest-name {
+    display: block;
+
     width: 100%;
     height: 41px;
+
+    box-sizing: border-box;
 
     padding: 0 14px;
 
@@ -1523,6 +1588,8 @@ body::before {
     font-size: 12px;
 
     outline: none;
+
+    transition: border-color 0.25s ease;
 }
 
 .guest-name::placeholder {
@@ -1539,14 +1606,16 @@ body::before {
    ========================================================= */
 
 .guest-message {
+    display: block;
+
     width: 100%;
     height: 135px;
 
     margin-top: 15px;
 
-    padding: 13px 14px;
-
     box-sizing: border-box;
+
+    padding: 13px 14px;
 
     resize: none;
 
@@ -1564,7 +1633,11 @@ body::before {
 
     font-size: 12px;
 
+    line-height: 1.5;
+
     outline: none;
+
+    transition: border-color 0.25s ease;
 }
 
 .guest-message::placeholder {
@@ -1591,6 +1664,11 @@ body::before {
     margin-top: 10px;
 }
 
+
+/* =========================================================
+   EMOJI BUTTON
+   ========================================================= */
+
 .emoji-btn {
     width: 34px;
     height: 30px;
@@ -1607,7 +1685,20 @@ body::before {
     font-size: 15px;
 
     cursor: pointer;
+
+    transition: 0.25s ease;
 }
+
+.emoji-btn:hover {
+    background: rgba(210, 201, 190, 0.7);
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SEND BUTTON
+   ========================================================= */
 
 .send-btn {
     height: 33px;
@@ -1640,8 +1731,21 @@ body::before {
     transform: translateY(-1px);
 }
 
+.send-btn:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
 .empty-message {
-    margin: 15px 0 0;
+    margin: 5px 0 0;
 
     color: #91847c;
 
@@ -1651,11 +1755,70 @@ body::before {
         serif;
 
     font-size: 11px;
+
+    line-height: 1.5;
 }
 
 
 /* =========================================================
-   GIFT TITLE TRONG GUESTBOOK
+   DANH SÁCH LỜI CHÚC
+   ========================================================= */
+
+.guest-wishes {
+    position: relative;
+
+    width: 44%;
+
+    margin: 0 auto;
+
+    padding-top: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TỪNG LỜI CHÚC
+   ========================================================= */
+
+.guest-wish {
+    padding: 12px 0;
+
+    border-bottom: 1px solid rgba(140, 123, 112, 0.35);
+
+    text-align: left;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.guest-wish-name {
+    margin: 0 0 5px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.guest-wish-message {
+    margin: 0;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    color: #85776e;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   GIFT TITLE
    ========================================================= */
 
 .gift-title {
@@ -1682,6 +1845,11 @@ body::before {
 
     white-space: nowrap;
 }
+
+
+/* =========================================================
+   OPEN GIFT
+   ========================================================= */
 
 .open-gift {
     position: absolute;
@@ -1718,6 +1886,11 @@ body::before {
     color: #554941;
 }
 
+
+/* =========================================================
+   THANK YOU
+   ========================================================= */
+
 .thank-you {
     position: absolute;
 
@@ -1740,9 +1913,76 @@ body::before {
         serif;
 
     font-size: 11px;
+
+    line-height: 1.5;
 }
 
 
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 600px) {
+
+    .guestbook-content {
+        width: 48%;
+    }
+
+    .guest-wishes {
+        width: 48%;
+    }
+
+    .guestbook-content h2 {
+        font-size: 17px;
+
+        margin-bottom: 18px;
+    }
+
+    .guest-name {
+        height: 37px;
+
+        font-size: 11px;
+    }
+
+    .guest-message {
+        height: 110px;
+
+        margin-top: 10px;
+
+        font-size: 11px;
+    }
+
+    .send-btn {
+        height: 31px;
+
+        padding: 0 16px;
+
+        font-size: 10px;
+    }
+
+    .emoji-btn {
+        width: 31px;
+        height: 28px;
+
+        font-size: 13px;
+    }
+
+    .empty-message {
+        font-size: 9px;
+    }
+
+    .gift-title {
+        font-size: 16px;
+    }
+
+    .gift-text {
+        font-size: 10px;
+    }
+
+    .thank-you {
+        font-size: 9px;
+    }
+}
 /* =========================================================
    GIFT SECTION
    ========================================================= */
@@ -2808,4 +3048,828 @@ textarea,
 select {
     max-width: 100%;
     box-sizing: border-box;
+}
+
+/* =========================================================
+   DANH SÁCH LỜI CHÚC
+   ========================================================= */
+
+.guest-wishes {
+    position: absolute;
+
+    top: 58%;
+    left: 50%;
+
+    width: 44%;
+
+    transform: translateX(-50%);
+
+    max-height: 180px;
+
+    overflow-y: auto;
+
+    padding: 5px 8px;
+
+    box-sizing: border-box;
+
+    z-index: 5;
+}
+
+
+/* =========================================================
+   TỪNG LỜI CHÚC
+   ========================================================= */
+
+.guest-wish {
+
+    width: 100%;
+
+    margin-bottom: 10px;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(140, 123, 112, 0.45);
+
+    border-radius: 8px;
+
+    background: rgba(255, 255, 255, 0.25);
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   TÊN KHÁCH
+   ========================================================= */
+
+.guest-wish-name {
+
+    margin: 0 0 5px;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   NỘI DUNG LỜI CHÚC
+   ========================================================= */
+
+.guest-wish-message {
+
+    margin: 0;
+
+    color: #85776e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   THANH CUỘN
+   ========================================================= */
+
+.guest-wishes::-webkit-scrollbar {
+    width: 4px;
+}
+
+.guest-wishes::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.guest-wishes::-webkit-scrollbar-thumb {
+    background: rgba(117, 102, 94, 0.45);
+
+    border-radius: 10px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+
+    .guest-wishes {
+
+        width: 48%;
+
+        top: 58%;
+
+        max-height: 150px;
+
+    }
+
+    .guest-wish {
+
+        padding: 8px 10px;
+
+        margin-bottom: 8px;
+
+    }
+
+    .guest-wish-name {
+
+        font-size: 10px;
+
+    }
+
+    .guest-wish-message {
+
+        font-size: 9px;
+
+        line-height: 1.4;
+
+    }
+
+}
+
+
+/* =========================================================
+   ĐIỆN THOẠI NHỎ
+   ========================================================= */
+
+@media screen and (max-width: 425px) {
+
+    .guest-wishes {
+
+        width: 49%;
+
+        top: 58%;
+
+        max-height: 125px;
+
+    }
+
+    .guest-wish {
+
+        padding: 7px 8px;
+
+    }
+
+    .guest-wish-name {
+
+        font-size: 9px;
+
+    }
+
+    .guest-wish-message {
+
+        font-size: 8px;
+
+    }
+
+}
+
+
+/* =========================================================
+   ĐIỆN THOẠI RẤT NHỎ
+   ========================================================= */
+
+@media screen and (max-width: 375px) {
+
+    .guest-wishes {
+
+        width: 50%;
+
+        top: 58%;
+
+        max-height: 110px;
+
+    }
+
+    .guest-wish-name {
+
+        font-size: 8px;
+
+    }
+
+    .guest-wish-message {
+
+        font-size: 7.5px;
+
+    }
+
+}
+
+
+/* =========================================================
+   POPUP XÁC NHẬN THAM DỰ
+   ========================================================= */
+
+.attendance-popup {
+    position: fixed;
+
+    inset: 0;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 9999;
+}
+
+
+/* =========================================================
+   KHI POPUP ĐƯỢC MỞ
+   ========================================================= */
+
+.attendance-popup.active {
+    display: flex;
+}
+
+
+/* =========================================================
+   NỀN TỐI
+   ========================================================= */
+
+.attendance-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(3px);
+}
+
+
+/* =========================================================
+   KHUNG POPUP
+   ========================================================= */
+
+.attendance-box {
+    position: relative;
+
+    z-index: 2;
+
+    width: 90%;
+    max-width: 390px;
+
+    padding: 30px 25px;
+
+    box-sizing: border-box;
+
+    background: #fdfaf6;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 15px 50px rgba(0, 0, 0, 0.2);
+
+    text-align: center;
+
+    animation: attendancePopupShow 0.35s ease;
+}
+
+
+/* =========================================================
+   HIỆU ỨNG MỞ POPUP
+   ========================================================= */
+
+@keyframes attendancePopupShow {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(20px)
+            scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   NÚT ĐÓNG
+   ========================================================= */
+
+.attendance-close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    width: 30px;
+    height: 30px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #75665e;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 300;
+
+    line-height: 30px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.attendance-close:hover {
+    color: #4f433d;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   TIÊU ĐỀ
+   ========================================================= */
+
+.attendance-box h2 {
+
+    margin: 5px 0 8px;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 20px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================================================
+   DÒNG PHỤ
+   ========================================================= */
+
+.attendance-subtitle {
+
+    margin: 0 0 22px;
+
+    color: #9a8b82;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INPUT
+   ========================================================= */
+
+.attendance-input {
+
+    width: 100%;
+
+    height: 42px;
+
+    margin-bottom: 13px;
+
+    padding: 0 13px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #c8bbb2;
+
+    border-radius: 7px;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+}
+
+
+.attendance-input::placeholder {
+
+    color: #aa9c92;
+
+}
+
+
+.attendance-input:focus {
+
+    border-color: #806f65;
+
+}
+
+
+/* =========================================================
+   LABEL
+   ========================================================= */
+
+.attendance-label {
+
+    margin: 4px 0 8px;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   LỰA CHỌN THAM DỰ
+   ========================================================= */
+
+.attendance-options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+
+    margin-bottom: 20px;
+
+    text-align: left;
+}
+
+
+.attendance-options label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #75665e;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+
+    cursor: pointer;
+}
+
+
+.attendance-options input {
+
+    width: 14px;
+
+    height: 14px;
+
+    margin: 0;
+
+    accent-color: #806f65;
+
+}
+
+
+/* =========================================================
+   NÚT XÁC NHẬN
+   ========================================================= */
+
+.attendance-submit {
+
+    width: 100%;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #806f65;
+
+    color: #fff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.5px;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+
+.attendance-submit:hover {
+
+    background: #6f5f56;
+
+    transform: translateY(-1px);
+
+}
+
+
+/* =========================================================
+   THÔNG BÁO
+   ========================================================= */
+
+.attendance-status {
+
+    min-height: 16px;
+
+    margin: 12px 0 0;
+
+    color: #806f65;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media screen and (max-width: 425px) {
+
+    .attendance-box {
+
+        width: 88%;
+
+        padding: 27px 20px;
+
+        border-radius: 12px;
+
+    }
+
+
+    .attendance-box h2 {
+
+        font-size: 18px;
+
+    }
+
+
+    .attendance-subtitle {
+
+        font-size: 11px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .attendance-input {
+
+        height: 40px;
+
+        font-size: 11px;
+
+    }
+
+
+    .attendance-label {
+
+        font-size: 10px;
+
+    }
+
+
+    .attendance-options label {
+
+        font-size: 10px;
+
+    }
+
+
+    .attendance-submit {
+
+        height: 38px;
+
+        font-size: 11px;
+
+    }
+
+}
+
+/* =========================================================
+   NÚT THÊM VÀO LỊCH
+========================================================= */
+
+.calendar-buttons {
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.add-calendar {
+    width: 145px;
+    min-height: 58px;
+    padding: 8px 10px;
+    box-sizing: border-box;
+
+    border: 1px solid #b9aaa0;
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.35);
+
+    color: #75665e;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.add-calendar span {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.add-calendar strong {
+    display: block;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+.add-calendar small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #9a8b82;
+
+    font-size: 9px;
+}
+
+.add-calendar:hover {
+    background: rgba(128, 111, 101, 0.12);
+    border-color: #806f65;
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media screen and (max-width: 425px) {
+
+    .calendar-buttons {
+        gap: 8px;
+    }
+
+    .add-calendar {
+        width: 130px;
+        min-height: 54px;
+        padding: 7px 6px;
+    }
+
+    .add-calendar strong {
+        font-size: 9px;
+    }
+
+    .add-calendar small {
+        font-size: 8px;
+    }
+}
+
+
+@media screen and (max-width: 375px) {
+
+    .calendar-buttons {
+        gap: 6px;
+    }
+
+    .add-calendar {
+        width: 120px;
+        min-height: 52px;
+    }
+
+    .add-calendar strong {
+        font-size: 8px;
+    }
+}
+
+/* =========================================================
+   NÚT NHẠC
+========================================================= */
+
+.music-button {
+    position: fixed;
+
+    right: 18px;
+    bottom: 18px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #806f65;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    z-index: 99999;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.22);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+.music-button:hover {
+    transform: scale(1.08);
+    background: #6f5e55;
+}
+
+
+/* ĐIỆN THOẠI */
+
+@media screen and (max-width: 425px) {
+
+    .music-button {
+        right: 14px;
+        bottom: 14px;
+
+        width: 40px;
+        height: 40px;
+
+        font-size: 16px;
+    }
+
 }

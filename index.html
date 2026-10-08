@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Đám Cưới Ngọc Tươi</title>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -345,13 +345,19 @@
 
 <section class="wedding-party">
 
-    <!-- TIÊU ĐỀ -->
+    <!-- =================================================
+         TIÊU ĐỀ
+    ================================================== -->
+
     <h2 class="party-title">
         THÔNG TIN TIỆC CƯỚI
     </h2>
 
 
-    <!-- NỘI DUNG -->
+    <!-- =================================================
+         NỘI DUNG
+    ================================================== -->
+
     <div class="party-content">
 
         <div class="party-intro">
@@ -360,12 +366,14 @@
 
 
         <!-- GIỜ -->
+
         <div class="party-time">
             08:30
         </div>
 
 
         <!-- NGÀY -->
+
         <div class="party-date">
 
             <span>CHỦ NHẬT</span>
@@ -382,12 +390,14 @@
 
 
         <!-- NĂM -->
+
         <div class="party-year">
             2026
         </div>
 
 
         <!-- ÂM LỊCH -->
+
         <div class="party-lunar">
             ( TỨC NGÀY 16 THÁNG 9 NĂM BÍNH NGỌ )
         </div>
@@ -486,21 +496,50 @@
         </div>
 
 
-        <!-- THÊM VÀO LỊCH -->
+        <!-- =================================================
+             THÊM VÀO LỊCH
+        ================================================== -->
 
-        <a
-            href="#"
-            class="add-calendar">
+        <!-- =========================================================
+     THÊM VÀO LỊCH
+========================================================= -->
 
-            Thêm vào lịch
+<div class="calendar-buttons">
 
-        </a>
+    <!-- NHÀ GÁI -->
+    <button
+        type="button"
+        class="add-calendar"
+        id="addCalendarBride">
+
+        <span>🌸</span>
+        <strong>LỄ CƯỚI NHÀ GÁI</strong>
+        <small>Thêm vào lịch</small>
+
+    </button>
 
 
-        <!-- XÁC NHẬN -->
+    <!-- NHÀ TRAI -->
+    <button
+        type="button"
+        class="add-calendar"
+        id="addCalendarGroom">
+
+        <span>🌿</span>
+        <strong>LỄ CƯỚI NHÀ TRAI</strong>
+        <small>Thêm vào lịch</small>
+
+    </button>
+
+</div>
+
+        <!-- =================================================
+             XÁC NHẬN THAM DỰ
+        ================================================== -->
 
         <button
             class="confirm-attendance"
+            id="openAttendance"
             type="button">
 
             XÁC NHẬN THAM DỰ
@@ -534,6 +573,213 @@
             src="anhcuoi/flower2-decoration.png"
             alt=""
         >
+
+    </div>
+
+
+    <!-- =================================================
+         POPUP XÁC NHẬN THAM DỰ
+    ================================================== -->
+
+    <div
+        class="attendance-popup"
+        id="attendancePopup">
+
+
+        <!-- NỀN TỐI -->
+
+        <div
+            class="attendance-overlay"
+            id="attendanceOverlay">
+        </div>
+
+
+        <!-- KHUNG FORM -->
+
+        <div class="attendance-box">
+
+
+            <!-- NÚT ĐÓNG -->
+
+            <button
+                type="button"
+                class="attendance-close"
+                id="attendanceClose">
+
+                ×
+
+            </button>
+
+
+            <!-- TIÊU ĐỀ -->
+
+            <h2>
+                XÁC NHẬN THAM DỰ
+            </h2>
+
+
+            <p class="attendance-subtitle">
+
+                Rất hân hạnh được đón tiếp bạn ❤️
+
+            </p>
+
+
+            <!-- =================================================
+                 HỌ TÊN
+            ================================================== -->
+
+            <input
+                type="text"
+                id="attendanceName"
+                class="attendance-input"
+                placeholder="Họ và tên*"
+            >
+
+
+            <!-- =================================================
+                 SỐ ĐIỆN THOẠI
+            ================================================== -->
+
+            <input
+                type="tel"
+                id="attendancePhone"
+                class="attendance-input"
+                placeholder="Số điện thoại*"
+            >
+
+
+            <!-- =================================================
+                 SỐ NGƯỜI
+            ================================================== -->
+
+            <div class="attendance-label">
+
+                Số người tham dự
+
+            </div>
+
+
+            <select
+                id="attendanceGuests"
+                class="attendance-input">
+
+                <option value="1">
+                    1 người
+                </option>
+
+                <option value="2">
+                    2 người
+                </option>
+
+                <option value="3">
+                    3 người
+                </option>
+
+                <option value="4">
+                    4 người
+                </option>
+
+                <option value="5">
+                    5 người
+                </option>
+
+                <option value="6">
+                    6 người
+                </option>
+
+                <option value="7">
+                    7 người
+                </option>
+
+                <option value="8">
+                    8 người
+                </option>
+
+                <option value="9">
+                    9 người
+                </option>
+
+                <option value="10">
+                    10 người
+                </option>
+
+            </select>
+
+
+            <!-- =================================================
+                 TRẠNG THÁI THAM DỰ
+            ================================================== -->
+
+            <div class="attendance-label">
+
+                Bạn có tham dự không?
+
+            </div>
+
+
+            <div class="attendance-options">
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Tham dự"
+                        checked
+                    >
+
+                    <span>
+                        Tôi sẽ tham dự ❤️
+                    </span>
+
+                </label>
+
+
+                <label>
+
+                    <input
+                        type="radio"
+                        name="attendance"
+                        value="Không tham dự"
+                    >
+
+                    <span>
+                        Tôi không thể tham dự
+                    </span>
+
+                </label>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 NÚT GỬI
+            ================================================== -->
+
+            <button
+                type="button"
+                class="attendance-submit"
+                id="attendanceSubmit">
+
+                XÁC NHẬN
+
+            </button>
+
+
+            <!-- =================================================
+                 THÔNG BÁO
+            ================================================== -->
+
+            <p
+                class="attendance-status"
+                id="attendanceStatus">
+            </p>
+
+
+        </div>
 
     </div>
 
@@ -617,31 +863,51 @@
         <input
             type="text"
             class="guest-name"
+            id="guestName"
             placeholder="Nhập tên*"
         >
 
         <textarea
             class="guest-message"
+            id="guestMessage"
             placeholder="Nhập lời chúc*"
         ></textarea>
 
         <div class="guestbook-actions">
 
-            <button class="emoji-btn">
+            <button
+                type="button"
+                class="emoji-btn"
+                id="emojiBtn"
+            >
                 📝
             </button>
 
-            <button class="send-btn">
+            <button
+                type="button"
+                class="send-btn"
+                id="sendWish"
+            >
                 GỬI LỜI CHÚC
             </button>
 
         </div>
 
-        <p class="empty-message">
+        <p
+            class="empty-message"
+            id="sendStatus"
+        >
             Chưa có lời chúc nào. Hãy là người đầu tiên!
         </p>
 
     </div>
+
+    <!-- Danh sách lời chúc sẽ hiển thị ở đây -->
+    <div
+        class="guest-wishes"
+        id="guestWishes"
+    ></div>
+
 </section>
 <section class="gift-section">
 
@@ -733,6 +999,17 @@
     </div>
 
 </div>
+
+<audio id="weddingMusic" loop>
+    <source src="anhcuoi/nhac.mp3" type="audio/mpeg">
+</audio>
+
+<button
+    type="button"
+    id="musicButton"
+    class="music-button">
+    ♪
+</button>
 <script src="index.js"></script>
 </body>
 </html>
