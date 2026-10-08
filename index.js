@@ -1060,3 +1060,70 @@ if (window.location.pathname.endsWith("index.html")) {
     });
 
 }
+// ========================================
+// TỰ ĐỘNG LƯỚT TRANG TRÊN ĐIỆN THOẠI
+// TỪ ĐẦU → CUỐI TRONG 2 PHÚT
+// ========================================
+
+if (window.innerWidth <= 768) {
+
+    window.addEventListener("load", function () {
+
+        setTimeout(function () {
+
+            const maxScroll =
+                document.documentElement.scrollHeight -
+                window.innerHeight;
+
+            if (maxScroll <= 0) return;
+
+            const duration = 120000; // 2 phút
+            const startTime = performance.now();
+
+            let running = true;
+
+            // Người dùng chạm/vuốt → dừng tự động
+            function stopAutoScroll() {
+                running = false;
+            }
+
+            window.addEventListener(
+                "touchstart",
+                stopAutoScroll,
+                { once: true, passive: true }
+            );
+
+            window.addEventListener(
+                "touchmove",
+                stopAutoScroll,
+                { once: true, passive: true }
+            );
+
+            function autoScroll(currentTime) {
+
+                if (!running) return;
+
+                const elapsed =
+                    currentTime - startTime;
+
+                const progress =
+                    Math.min(elapsed / duration, 1);
+
+                window.scrollTo(
+                    0,
+                    maxScroll * progress
+                );
+
+                if (progress < 1) {
+                    requestAnimationFrame(autoScroll);
+                }
+
+            }
+
+            requestAnimationFrame(autoScroll);
+
+        }, 1000);
+
+    });
+
+}
